@@ -1,19 +1,19 @@
-# 🎈 Blank app template
+### New Homepage
 
-A simple Streamlit app template for you to modify!
+本项目整合了我之前几个仍在维护的非工具类Streamlit项目的内容，在侧边栏选择对应项目。原项目保留在Streamlit Cloud但新增内容只会放到本项目。
 
-[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://blank-app-template.streamlit.app/)
+本项目已部署到Streamlit Cloud，域名为https://william7004-new-homepage.streamlit.app
 
-### How to run it on your own machine
 
-1. Install the requirements
+本地部署流程
 
-   ```
-   $ pip install -r requirements.txt
-   ```
+建议使用Python=3.10环境
 
-2. Run the app
-
-   ```
-   $ streamlit run streamlit_app.py
-   ```
+1.安装依赖
+```
+pip install -r requirements.txt
+```
+2.运行应用
+```
+streamlit run streamlit_app.py
+```
