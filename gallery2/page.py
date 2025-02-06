@@ -2,8 +2,7 @@ import os
 import random
 import streamlit as st
 
-st.sidebar.subheader("Hunyuan Video Gallery", divider=True)
-with st.sidebar.expander("项目说明"):
+with st.expander("Hunyuan Video Gallery （展开项目说明）"):
     st.write("本项目内容为本人使用Hunyuan Video生成的有提示词的视频内容，比之前的无提示词流程出片率高。可以选择随机显示或显示特定文件夹的内容。虽然使用ConfyUI官方工作流时能生成图片，但考虑到是视频模型，本项目只包含视频内容。")
 # 获取当前目录下files文件夹中的所有文件夹
 def get_folders():
