@@ -26,5 +26,5 @@ st.write("处理或生成较长的文章需要支持较大输入或输出上下�
 st.subheader("8.模型部署", divider=True)
 st.write("有多个运行框架可以部署LLM，我目前用的是Ollama。Ollama的优势是安装比较方便，还可以直接在命令行下载量化后的模型。")
 st.write("Ollama没有GUI但可以通过http请求或使用Python和Javascript等语言的库文件整或到应用中。我目前通过Chatbox使用Ollama的单模态模型和调用线上模型的api。调用Ollama的多模态模型用过Openwebui和Local Multimodal AI Chat。Local Multimodal AI Chat，后来发现使用chatbox通过openai api格式可以调用ollama中的多模态模型，就改用这一形式。")
-st.write("我目前在电脑部署的模型有Deepseek R1 Distill Qwen 7b、Dolphin3 8b（去对齐）、MiniCPM v2.6（用于多模态，效果更好的Qwen2 VL 7b目前还不能在Ollama运行）、InternLM2.5 7b（长输入）、Longwriter GLM4 9b（长输出）、Bge-m3（嵌入模型）。在手机部署的模型有Deepseek R1 Distill Qwen 1.5b和Dolphin3 3b。")
+st.write("我目前在电脑部署的模型有Deepseek R1 Distill Qwen 7b、Dolphin3 8b（去对齐）、MiniCPM v2.6（用于多模态，效果更好的Qwen2 VL 7b目前还不能在Ollama运行）、InternLM2.5 7b（长输入）、Longwriter GLM4 9b（长输出）、Bge-m3（嵌入模型）。为了节省空间和加快部署，后期弃用了使用率较低的InternLM2.5 7b和Longwriter GLM4 9b，使用huihui_ai/deepseek-r1-abliterated 7b代替另外两个模型。在手机部署的模型有Deepseek R1 Distill Qwen 1.5b和Dolphin3 3b。")
 st.show()
