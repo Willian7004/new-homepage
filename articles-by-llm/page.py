@@ -4,7 +4,7 @@ import random
 from pathlib import Path
 
 with st.expander("Aritcles by LLM （展开项目说明）"):
-    st.write("有网友实测Deepseek R1的思维链能带来写作能力优势，我确认有优势后决定用于写作。目前规划的内容包括写关于我之前的谷歌地球项目中的较大的城市的散文，并使用Fish Speech1.5合成音频。")
+    st.write("有网友实测Deepseek R1的思维链能带来写作能力优势，我确认有优势后决定用于写作。目前规划的内容包括写关于我之前的谷歌地球项目中的较大的城市以及中国各省省会的散文，并使用Fish Speech1.5合成音频。")
 
 # 获取文件列表
 def get_files():
