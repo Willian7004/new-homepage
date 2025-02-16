@@ -14,7 +14,7 @@ st.write("后来希望了解图形界面开发，想到很多程序是基于web�
 st.subheader("4.盛于AI", divider=True)
 st.write("我在Ollama发布0.1版本时就开始部署AI模型，之前部署过Qwen1.5 7b和14b版本，后来Qwen2发布，72b版本性能接近GPT4，实测可靠性也较高，就尝试用来开发一些我尚不了解相关api或开发繁琐的项目，包括https://github.com/Willian7004/Python-Programs-of-William7004 和https://github.com/Willian7004/HTML-Programs 仓库后面的部分。")
 st.write("此前部署Qwen2 72b是本地运行，大部分层加载在CPU，速度很慢。后面发布的Deepseek Coder v2编程能力更高，定价低并且网页版免费，就改用Deepseek Coder v2进行开发。开发时也开始尝试在一个程序中实现多个步骤，比较有代表性的是RSS总结项目，发布在https://github.com/Willian7004/Python-Programs-of-William7004/blob/main/rss%E6%80%BB%E7%BB%93%EF%BC%88%E5%8D%95%E6%96%87%E4%BB%B6%EF%BC%89.py 。我在仓库中也给出了提示词方便参考。尝试复杂提示词后又开发了一些包含多个程序的项目，均为AI应用，包括https://github.com/Willian7004/LLM-Code-Tools 、https://github.com/Willian7004/LLM-Document-Tools 、https://github.com/Willian7004/LLM-novel-writer/tree/v0.9 。这部分应用也表现了当时我对于AI应用的探索。")
-st.write("近期我进行编程也有一些新的方向。一方面转向语法简单并且我更为熟悉的的Python语言，学习了Streamlit和NiceGUI用于快速制作网页。另一方面新出现的思维链模型具有更高的编程能力，可以尝试在提示词中描述程序功能而非具体步骤以节省开发时间。")
+st.write("近期我进行编程也有一些新的方向。一方面转向语法简单并且我更为熟悉的的Python语言，学习了Streamlit和NiceGUI用于快速制作网页。另一方面新出现的思维链模型具有更高的编程能力，可以尝试在提示词中描述程序功能而非具体步骤以节省开发时间。逻辑内容使用LLM辅助编写的Streamlit应用包括https://github.com/Willian7004/llm-inquiry https://github.com/Willian7004/hunyuan-video-gallery https://github.com/Willian7004/files-drop https://github.com/Willian7004/hunyuan-video-gallery-without-prompt https://github.com/Willian7004/local_streamlit_navigator https://github.com/Willian7004/gallery-without-prompt https://github.com/Willian7004/ysyx-note")
 st.subheader("5.终于电路", divider=True)
 st.write("考虑到使用大量编程语言在语法上容易造成混淆，除c语言和python外基本都不使用了。后来因为希望了解电路设计，参加了一生一芯项目，接触到了Verilog和Chisel。Verilog在风格上接近c语言，而Chisel是Java风格的，又考虑到语法复杂度和部署难度等因素，选择使用Verilog作为我进行电路设计的主要编程语言。考虑到语法混淆问题，短期内也不会大规模使用其它编程语言了。")
 st.show()

@@ -1,7 +1,7 @@
 import streamlit as st
 
 st.title("摄影器材杂谈")
-st.sidebar.title("摄影器材杂谈")
+
 st.write("我拍摄的照片发布在https://500px.com.cn/WilliamKing ，视频发布在https://space.bilibili.com/478036060? 和https://www.acfun.cn/u/76077623 （包含其它类型的视频）")
 st.subheader("1.手机", divider=True)
 st.write("我换手机是在2022年，相机的溢价还比较严重，就选择OPPO FInd X5 Pro作为主力摄影设备。骁龙888以上的手机计算摄影性能大幅提升。相应摄像头使用1/1.7英寸以上的传感器的话拍照解析度尚可，宽容度比较高。")

@@ -16,15 +16,20 @@ st.write("o3 mini相比o1系列有性价比优势，o3在ARC AGI测试能达到�
 
 st.subheader("4.小型化旗舰模型", divider=True)
 st.write("有几个系列的模型在有模型达到GPT4水平后开始小型化并保持性能，其中闭源模型主要有Gemini2.0 Flash和Yi Lighting，开源模型主要有phi4，14b参数量适合在PC部署,思维链模型包括Gemini2.0 Flash Thinking和Deepseek R1 Distill系列。")
+
 st.subheader("5.端侧模型", divider=True)
-st.write("端侧模型用于手机或在PC后台运行，主要考虑7b和3b参数量，并且只能使用开源模型。考虑多语言后有优势的多模态模型有Qwen2 VL 7B和Megrez 3B Omni，单模态模型有Qwen2.5 7B和Qwen2.5 3B。")
+st.write("端侧模型用于手机或在PC后台运行，主要考虑7b和3b参数量，并且只能使用开源模型。考虑多语言后有优势的多模态模型有Qwen2 VL 7B和Megrez 3B Omni，单模态模型中非思维链的有Qwen2.5 3B/7b，思维链模型有DeepscaleR和Deepseek R1 Distill Qwen 1.5b/7b。")
+
 st.subheader("6.无审查模型", divider=True)
-st.write("比较新的模型大部分进行了对齐，可以避免生成不道德的内容，但在角色扮演等用途仍需要未对齐的模型，在写作中未对齐的模型也有更好的表现。")
-st.write("目前效果最好的无审查模型是旧版CommandR和CommandR+，官方版本是未对齐的。另外大部分常见模型有第三方的去对齐版本。")
+st.write("比较新的模型大部分进行了对齐，可以避免生成不道德的内容，但在角色扮演等用途仍需要未对齐的模型。")
+st.write("目前效果最好的官方无审查模型是旧版CommandR和CommandR+，但考虑到模型较旧，实际部署时可能要优先使用比较新的模型的去对齐版本。")
+
 st.subheader("7.长序列模型", divider=True)
-st.write("处理或生成较长的文章需要支持较大输入或输出上下文长度的模型，考虑对api成本的影响，这类只讨论开源模型。目前比较好的开源长上下文模型是InternLM2.5 7b 1M和GLM4 9b 1M。长输出模型只有使用longwriter数据集微调的模型，目前只有GLM4 9b、Qwen2.5 7B和Llama3.1 8b。")
+st.write("处理或生成较长的文章需要支持较大输入或输出上下文长度的模型，考虑对api成本的影响，这类只讨论开源模型。目前比较好的开源长上下文模型有Qwen2.5 7b/14b、InternLM2.5 7b和GLM4 9b的长上下文版本。长输出模型只有使用longwriter数据集微调的模型，目前只有GLM4 9b、Qwen2.5 7B和Llama3.1 8b。")
+
 st.subheader("8.模型部署", divider=True)
-st.write("有多个运行框架可以部署LLM，我目前用的是Ollama。Ollama的优势是安装比较方便，还可以直接在命令行下载量化后的模型。")
-st.write("Ollama没有GUI但可以通过http请求或使用Python和Javascript等语言的库文件整或到应用中。我目前通过Chatbox使用Ollama的单模态模型和调用线上模型的api。调用Ollama的多模态模型用过Openwebui和Local Multimodal AI Chat。Local Multimodal AI Chat，后来发现使用chatbox通过openai api格式可以调用ollama中的多模态模型，就改用这一形式。")
-st.write("我目前在电脑部署的模型有Deepseek R1 Distill Qwen 7b、Dolphin3 8b（去对齐）、MiniCPM v2.6（用于多模态，效果更好的Qwen2 VL 7b目前还不能在Ollama运行）、InternLM2.5 7b（长输入）、Longwriter GLM4 9b（长输出）、Bge-m3（嵌入模型）。为了节省空间和加快部署，后期弃用了使用率较低的InternLM2.5 7b和Longwriter GLM4 9b，使用huihui_ai/deepseek-r1-abliterated 7b代替另外两个模型。在手机部署的模型有Deepseek R1 Distill Qwen 1.5b和Dolphin3 3b。")
+st.write("有多个运行框架可以部署LLM，我目前用的是Ollama。Ollama的优势是安装比较方便，还可以直接在命令行下载量化后的模型。对于其它框架，vLLM的优势是并发性能好以及支持多GPU张量并行；kTransformers的优势是通过异构计算优化MoE模型的显存占用；Mlx Vlm适用于Mac平台，对多模态模型支持较好；ChatterUI适用于安卓平台。Xinference整合了一些推理框架，除LLM外还支持语音合成等类型的模型。")
+st.write("Ollama没有GUI但可以通过http请求或使用Python和Javascript等语言的库文件整或到应用中。Chatbox可以直接调用Ollama的非多模态模型并通过openai api格式调用多模态模型。")
+st.write("我目前在电脑部署的模型有Deepseek R1 Distill Qwen 7b Ablicated（去对齐）、MiniCPM v2.6（用于多模态，效果更好的Qwen2 VL 7b目前还不能在Ollama运行）、Bge-m3（嵌入模型）。在手机部署的模型有Deepseek R1 Distill Qwen 1.5b和Dolphin3 3b。")
+
 st.show()
