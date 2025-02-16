@@ -9,16 +9,16 @@ st.subheader("2.多模态模型", divider=True)
 st.write("多模态模型开源处理图片。对于非思维链模型，闭源模型中Claude3.5 Sonnet表现最好，开源模型中MiniMax VL01表现最好。对于思维链模型，闭源模型中o1表现最好，开源模型中QvQ 72B Preview表现最好。以下是几个模型的对比")
 st.image("ai-note/files/多模态模型.jpg")
 
-st.subheader("3.思维链模型", divider=True)
-st.write("思维链模型可以通过增加推理步骤来提高性能。目前最优秀的闭源思维链模型是OpenAI o1，最优秀的开源思维链模型是Deepseek R1，其蒸馏版本在本地部署上有优势。以下是几个模型的对比（由于不少模型不是同时测试，表中只保留了有较多模型进行的测试，另外使用非思维链模型中表现最好的Deepseek v3作为对照）")
+st.subheader("3.推理模型", divider=True)
+st.write("推理模型可以通过增加推理步骤来提高性能。目前最优秀的闭源推理模型是OpenAI o1，最优秀的开源推理模型是Deepseek R1，其蒸馏版本在本地部署上有优势。以下是几个模型的对比（由于不少模型不是同时测试，表中只保留了有较多模型进行的测试，另外使用非推理模型中表现最好的Deepseek v3作为对照）")
 st.image("ai-note/files/思维链模型.jpg")
 st.write("o3 mini相比o1系列有性价比优势，o3在ARC AGI测试能达到人类水平，但成本高于人工。目前o3 mini即将发布，但出现o3可能在泄露的Frontier Math数据集训练的消息。目前o3未正式发布")
 
 st.subheader("4.小型化旗舰模型", divider=True)
-st.write("有几个系列的模型在有模型达到GPT4水平后开始小型化并保持性能，其中闭源模型主要有Gemini2.0 Flash和Yi Lighting，开源模型主要有phi4，14b参数量适合在PC部署,思维链模型包括Gemini2.0 Flash Thinking和Deepseek R1 Distill系列。")
+st.write("有几个系列的模型在有模型达到GPT4水平后开始小型化并保持性能，其中闭源模型主要有Gemini2.0 Flash和Yi Lighting，开源模型主要有phi4，14b参数量适合在PC部署,推理模型包括Gemini2.0 Flash Thinking和Deepseek R1 Distill系列。")
 
 st.subheader("5.端侧模型", divider=True)
-st.write("端侧模型用于手机或在PC后台运行，主要考虑7b和3b参数量，并且只能使用开源模型。考虑多语言后有优势的多模态模型有Qwen2 VL 7B和Megrez 3B Omni，单模态模型中非思维链的有Qwen2.5 3B/7b，思维链模型有DeepscaleR和Deepseek R1 Distill Qwen 1.5b/7b。")
+st.write("端侧模型用于手机或在PC后台运行，主要考虑7b和3b参数量，并且只能使用开源模型。考虑多语言后有优势的多模态模型有Qwen2 VL 7B和Megrez 3B Omni，单模态模型中非推理模型有Qwen2.5 3B/7b，推理模型有DeepscaleR和Deepseek R1 Distill Qwen 1.5b/7b。")
 
 st.subheader("6.无审查模型", divider=True)
 st.write("比较新的模型大部分进行了对齐，可以避免生成不道德的内容，但在角色扮演等用途仍需要未对齐的模型。")
