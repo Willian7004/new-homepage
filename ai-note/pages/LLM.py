@@ -2,7 +2,7 @@ import streamlit as st
 
 st.title("LLM")
 st.subheader("1.旗舰模型", divider=True)
-st.write("旗舰模型参数量较大，运行成本较高但可完成的任务也较多。Deepseek v3算是第一个下一代模型，也是第一个发布时性能超越所有闭源模型的开源模型，通过混合专家架构避免成本过高，但后面发布的豆包1.5pro和Gemini2.0Flash控制了参数量，在成本上有一定优势。以下是几个模型的对比（由于改用new homepage项目后无法显示表格，把数据导出到了xlsx文件，改用图片形式）")
+st.write("旗舰模型参数量较大，运行成本较高但可完成的任务也较多。Deepseek v3算是第一个下一代模型，也是第一个发布时性能超越所有闭源模型的开源模型，通过混合专家架构避免成本过高，但后面发布的Gemini2.0Flash控制了参数量，在成本上有一定优势，Grok3是目前效果最好的模型。由于测试集原因，数据合并到推理模型部分。以下是几个模型的对比（由于改用new homepage项目后无法显示表格，把数据导出到了xlsx文件，改用图片形式）")
 st.image("ai-note/files/旗舰模型.jpg")
 
 st.subheader("2.多模态模型", divider=True)
@@ -11,9 +11,8 @@ st.image("ai-note/files/多模态模型.jpg")
 st.write("早期的多模态模型大多只支持文本和图像，GPT 4o首次支持语音。在开源模型方面，MiniCPM v2.6 o通过整合不同模型实现对文本、视频和语音的支持，原生支持文本和语音的有Step Audio，原生支持文本、视频和语音的模型中最好的开源模型是Ola 7b。")
 
 st.subheader("3.推理模型", divider=True)
-st.write("推理模型可以通过增加推理步骤来提高性能。目前最优秀的闭源推理模型是OpenAI o1，最优秀的开源推理模型是Deepseek R1，其蒸馏版本在本地部署上有优势。以下是几个模型的对比（由于不少模型不是同时测试，表中只保留了有较多模型进行的测试，另外使用非推理模型中表现最好的Deepseek v3作为对照）")
-st.image("ai-note/files/思维链模型.jpg")
-st.write("o3 mini相比o1系列有性价比优势，o3在ARC AGI测试能达到人类水平，但成本高于人工。目前o3 mini即将发布，但出现o3可能在泄露的Frontier Math数据集训练的消息。目前o3未正式发布")
+st.write("推理模型可以通过增加推理步骤来提高性能。目前最优秀的闭源推理模型是Grok3 Reasoning系列，基本能对标未发布的o3。最优秀的开源推理模型是Deepseek R1，其蒸馏版本在本地部署上有优势。以下是几个模型的对比（由于不少模型不是同时测试，表中只保留了有较多模型进行的测试，另外使用非推理模型中表现最好的Deepseek v3作为对照）")
+st.image("ai-note/files/推理模型.jpg")
 
 st.subheader("4.小型化旗舰模型", divider=True)
 st.write("有几个系列的模型在有模型达到GPT4水平后开始小型化并保持性能，其中闭源模型主要有Gemini2.0 Flash和Yi Lighting，开源模型主要有phi4，14b参数量适合在PC部署,推理模型包括Gemini2.0 Flash Thinking和Deepseek R1 Distill系列。")
