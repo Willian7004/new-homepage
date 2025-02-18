@@ -8,6 +8,7 @@ st.image("ai-note/files/旗舰模型.jpg")
 st.subheader("2.多模态模型", divider=True)
 st.write("多模态模型开源处理图片。对于非思维链模型，闭源模型中Claude3.5 Sonnet表现最好，开源模型中MiniMax VL01表现最好。对于思维链模型，闭源模型中o1表现最好，开源模型中QvQ 72B Preview表现最好。以下是几个模型的对比")
 st.image("ai-note/files/多模态模型.jpg")
+st.write("早期的多模态模型大多只支持文本和图像，GPT 4o首次支持语音。在开源模型方面，MiniCPM v2.6 o通过整合不同模型实现对文本、视频和语音的支持，原生支持文本和语音的有Step Audio，原生支持文本、视频和语音的模型中最好的开源模型是Ola 7b。")
 
 st.subheader("3.推理模型", divider=True)
 st.write("推理模型可以通过增加推理步骤来提高性能。目前最优秀的闭源推理模型是OpenAI o1，最优秀的开源推理模型是Deepseek R1，其蒸馏版本在本地部署上有优势。以下是几个模型的对比（由于不少模型不是同时测试，表中只保留了有较多模型进行的测试，另外使用非推理模型中表现最好的Deepseek v3作为对照）")
