@@ -8,7 +8,7 @@ st.set_page_config(layout="wide")
 sys.path.append(".")
 
 # 主页面配置
-main_folders = ['mainpage', 'blog', 'ai-note', 'llm-inquiry', 'gallery1', 'gallery2','articles-by-llm']
+main_folders = ['mainpage', 'blog', 'ai-note', 'llm-inquiry', 'by-talk','gallery1', 'gallery2','articles-by-llm']
 
 # 创建侧边栏单选按钮
 selected_main = st.sidebar.radio(
