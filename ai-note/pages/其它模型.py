@@ -13,7 +13,7 @@ st.subheader("3.语音识别模型", divider=True)
 st.write("语音识别模型出现比较早，目前Whisper Large比较常见，新出的FireRed ASR效果更好。")
 
 st.subheader("3.世界模型", divider=True)
-st.write("这类模型相比视频模型，更偏向3D形式和可交互，场景真实性更好并且有可能代替一些实时渲染应用，不同模型有不同侧重点。Matrix-Zero（闭源）面向场景生成；Genie2（闭源）除场景外能实现一些交互功能；SceneX（仅发布论文）可以生成大规模场景；Wonderland（开源，未正式发布）也面向场景生成。已发布的开源模型包括See3D（图生3D）和DIAMOND（交互式）等。")
+st.write("这类模型相比视频模型，更偏向3D形式和可交互，场景真实性更好并且有可能代替一些实时渲染应用，不同模型有不同侧重点。Matrix-Zero（闭源）面向场景生成；Genie2（闭源）除场景外能实现一些交互功能；SceneX（仅发布论文）可以生成大规模场景；Wonderland（开源，未正式发布）也面向场景生成。已发布的开源模型包括See3D（图生3D）和DIAMOND（交互式）等。性能方面，DIAMOND中的csgo模型在rtx3090帧率约为10帧，低于使用路径追踪的游戏在同配置和分辨率下的帧率，这类模型短期内代替游戏的可能性不大。")
 
 st.subheader("4.3D物体生成模型", divider=True)
 st.write("用于单个物体生成的模型包括Hunyuan3D 2、Rudin1.5、SPAR3D、Edify 3D等，Hunyuan3D 2开源且提供动画绑定功能；Rudin1.5在生成锐利边角等方面有优势；SPAR3D也开源，生成速度快且提供编辑功能；Edify 3D也开源且注重拓扑效果。")
