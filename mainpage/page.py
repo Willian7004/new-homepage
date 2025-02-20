@@ -6,6 +6,7 @@ st.write("本项目整合了我之前几个仍在维护的非工具类Streamlit�
 st.write("blog页面包含我的一些技术方面的文章和杂谈。")
 st.write("ai-note页面包含我部署AI应用的案例和记录各分类中优秀的AI模型。")
 st.write("LLM-inquiry页面记录了我使用LLM查询的难以用传统搜索引擎查找的问题。")
+st.write("by-talk页面为杂谈，从blog页面的杂谈部分分离出来以便编辑。")
 st.write("gallery1页面已替换为新创建的Images by Hunyuan Video项目，包含使用Hunyuan Video生成的有提示词的图片。")
 st.write("gallery2项目包含使用Hunyuan Video生成的有提示词的图片和视频内容。")
 st.write("articles-by-llm项目是新创建的，展示了使用在写作上有优势的思维链模型写的文章以及对应的语音。")
