@@ -2,7 +2,7 @@ import streamlit as st
 import os
 
 with st.expander("By Talk （展开项目说明）"):
-    st.write("本项目为我的杂谈内容，为了方便编辑，从blog页面分离出这部分内容。")
+    st.write("本项目为我的杂谈内容，为了方便编辑，从blog页面分离出这部分内容。由于文章长度较短且不一致，文本框不使用固定高度和滚动条。")
 
 # 获取当前目录下files文件夹中的所有.md文件
 def get_md_files():
@@ -32,7 +32,7 @@ def display_selected_files(md_files, selected_range):
             file_path = os.path.join(files_dir, file_name)
             with open(file_path, 'r', encoding='utf-8') as file:
                 content = file.read()
-                with st.container(height=360):
+                with st.container(border=True):
                     st.write(content)
 
 md_files = get_md_files()

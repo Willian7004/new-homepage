@@ -26,7 +26,7 @@ def display_file(file_path):
     # 显示文本内容
     with open(file_path, "r", encoding="utf-8") as f:
         content = f.read()
-    st.text_area("", content, height=350, key=file_name)
+    st.text_area("", content, height=400, key=file_name)
 
 
 txt_files = get_files()

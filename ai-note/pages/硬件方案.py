@@ -19,4 +19,8 @@ st.write("移动设备和嵌入式设备主要使用较小的端侧模型，不�
 st.subheader("4.高带宽迷你主机", divider=True)
 st.write("这类产品使用高带宽内存来运行AI应用，结合专用处理器实现体积和功耗优势，性价比通常不如CPU方案。通用产品包括Mac Studio和AMD AI Max系列，并且有对应的笔记本电脑产品。一些计算卡企业也开发了对AI应用优化的专用产品，包括Project Digits（英伟达架构）和香橙派AI Studio Pro（昇腾架构）")
 
+st.subheader("5.优势方案的变化", divider=True)
+st.write("AI绘画/视频方面，在可以拉高分辨率的CogVideoX5b Fun出现之前，使用Comfyui的显存优化时6g显存够用了，CogVideoX5b Fun以及后来的CogVideoX1.5缺少显存优化，Hunyuan Video参数量更大，需要的显存大一些，但总体偏向GPU方案。Cosmos模型再次做到了8g显存能生成3秒，并且能实现704p分辨率和较好的运动效果，比较实用。")
+st.write("LLM方面，Gemma2出现之前旗舰模型参数量较大，内存较大的非GPU方案仍值得考虑，但Gemma2 27b接近旗舰性能，Qwen2.5 32b正式达到旗舰性能，后面接近旗舰性能的Phi4只有14b参数量，适合单卡部署，又考虑到推理模型对生成速度要求较高，GPU方案就再次获得优势了。")
+
 st.show()

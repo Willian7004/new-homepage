@@ -32,7 +32,7 @@ def display_selected_files(md_files, selected_range):
             file_path = os.path.join(files_dir, file_name)
             with open(file_path, 'r', encoding='utf-8') as file:
                 content = file.read()
-                with st.container(height=360):
+                with st.container(height=350):
                     st.write(content)
 
 md_files = get_md_files()
