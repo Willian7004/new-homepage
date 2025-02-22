@@ -16,7 +16,7 @@ def load_languages():
         st.error(f"读取语言文件时出错: {e}")
         return []
 
-st.title("代码编辑器")
+st.title("Code Tools")
 st.write("本项目用于编辑和运行Python代码，也可以实现对其它编写语言代码的高亮显示")
     
 # 初始化session_state
