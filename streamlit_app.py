@@ -8,7 +8,7 @@ st.set_page_config(layout="wide")
 sys.path.append(".")
 
 # 主页面配置
-main_folders = ['mainpage', 'blog', 'ai-note', 'llm-inquiry', 'by-talk','gallery1', 'gallery2','articles-by-llm']
+main_folders = ['mainpage', 'blog', 'ai-note', 'llm-inquiry', 'by-talk','gallery1', 'gallery2','articles-by-llm','tools']
 
 # 创建侧边栏单选按钮
 selected_main = st.sidebar.radio(
@@ -27,7 +27,7 @@ def load_module(module_path):
     except AttributeError:
         st.error(f"模块中缺少show()函数: {module_path}")
 
-if selected_main in ['blog', 'ai-note']:
+if selected_main in ['blog', 'ai-note','tools']:
     # 处理带子页面的情况
     pages_dir = os.path.join(selected_main, 'pages')
     
