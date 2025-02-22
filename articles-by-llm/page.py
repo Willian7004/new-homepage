@@ -26,7 +26,7 @@ def display_file(file_path):
     # 显示文本内容
     with open(file_path, "r", encoding="utf-8") as f:
         content = f.read()
-    st.text_area("", content, height=400, key=file_name)
+    st.text_area("文本", content, height=400, key=file_name, label_visibility="collapsed")
 
 
 txt_files = get_files()
@@ -34,7 +34,7 @@ txt_files = get_files()
 # 第一行布局
 col1, col2 = st.columns([1, 1])
 with col1:
-    mode = st.selectbox("选择模式", ["选择页面", "随机", "搜索"], label_visibility="collapsed")
+    mode = st.selectbox("选择模式", ["选择页数", "随机", "搜索"])
 
 # 根据模式处理文件列表
 if mode == "选择页面":
