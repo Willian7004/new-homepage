@@ -19,7 +19,7 @@ aspnet
 autohotkey
 autoit
 avisynth
-avroIdl (avro-idl)
+avroIdl
 bash
 basic
 batch
@@ -48,7 +48,7 @@ crystal
 csharp
 cshtml
 csp
-cssExtras (css-extras)
+cssExtras
 css
 csv
 cypher
@@ -59,7 +59,7 @@ dax
 dhall
 diff
 django
-dnsZoneFile (dns-zone-file)
+dnsZoneFile
 docker
 dot
 ebnf
@@ -71,10 +71,10 @@ elm
 erb
 erlang
 etlua
-excelFormula (excel-formula)
+excelFormula
 factor
-falselang (false)
-firestoreSecurityRules (firestore-security-rules)
+falselang
+firestoreSecurityRules
 flow
 fortran
 fsharp
@@ -88,7 +88,7 @@ git
 glsl
 gml
 gn
-goModule (go-module)
+goModule
 go
 graphql
 groovy
@@ -104,7 +104,7 @@ hsts
 http
 ichigojam
 icon
-icuMessageFormat (icu-message-format)
+icuMessageFormat
 idris
 iecst
 ignore
@@ -120,8 +120,8 @@ javastacktrace
 jexl
 jolie
 jq
-jsExtras (js-extras)
-jsTemplates (js-templates)
+jsExtras
+jsTemplates
 jsdoc
 json
 json5
@@ -148,7 +148,7 @@ lua
 magma
 makefile
 markdown
-markupTemplating (markup-templating)
+markupTemplating
 markup
 matlab
 maxscript
@@ -160,7 +160,7 @@ monkey
 moonscript
 n1ql
 n4js
-nand2tetrisHdl (nand2tetris-hdl)
+nand2tetrisHdl
 naniscript
 nasm
 neon
@@ -181,7 +181,7 @@ pascaligo
 pcaxis
 peoplecode
 perl
-phpExtras (php-extras)
+phpExtras
 php
 phpdoc
 plsql
@@ -219,16 +219,16 @@ sass
 scala
 scheme
 scss
-shellSession (shell-session)
+shellSession
 smali
 smalltalk
 smarty
 sml
 solidity
-solutionFile (solution-file)
+solutionFile
 soy
 sparql
-splunkSpl (splunk-spl)
+splunkSpl
 sqf
 sql
 squirrel
@@ -236,9 +236,9 @@ stan
 stylus
 swift
 systemd
-t4Cs (t4-cs)
-t4Templating (t4-templating)
-t4Vb (t4-vb)
+t4Cs
+t4Templating
+t4Vb
 tap
 tcl
 textile
@@ -260,15 +260,15 @@ velocity
 verilog
 vhdl
 vim
-visualBasic (visual-basic)
+visualBasic
 warpscript
 wasm
-webIdl (web-idl)
+webIdl
 wiki
 wolfram
 wren
 xeora
-xmlDoc (xml-doc)
+xmlDoc
 xojo
 xquery
 yaml

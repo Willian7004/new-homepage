@@ -3,14 +3,14 @@ import os
 import sys
 from io import StringIO
 
-def load_languages():
-    """从languages.txt加载可用语言列表"""
+def load_react_syntax_highlighter():
+    """从 react_syntax_highlighter.txt加载可用语言列表"""
     try:
-        file_path = os.path.join("tools", "languages.txt")
+        file_path = os.path.join("tools", "react_syntax_highlighter.txt")
         with open(file_path, "r") as f:
             return [line.strip() for line in f.readlines() if line.strip()]
     except FileNotFoundError:
-        st.error("找不到languages.txt文件")
+        st.error("找不到 react_syntax_highlighter.txt文件")
         return []
     except Exception as e:
         st.error(f"读取语言文件时出错: {e}")
@@ -29,14 +29,14 @@ with col1:
     show_lang = st.checkbox("选择其它语言")
 
 # 处理语言选择
-languages = []
+react_syntax_highlighter = []
 if show_lang:
-    languages = load_languages()
+    react_syntax_highlighter = load_react_syntax_highlighter()
     with col2:
-        if languages:
+        if  react_syntax_highlighter:
             st.session_state.selected_lang = st.selectbox(
                 "选择语言",
-                options=languages,
+                options= react_syntax_highlighter,
                 index=0,
                 label_visibility="collapsed"
             )
