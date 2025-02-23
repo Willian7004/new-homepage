@@ -46,9 +46,8 @@ def display_file(filepath, show_preview=True):
 
 st.title("Files Drop")
 #项目说明
-with st.expander("项目说明"):
-    st.write("本项目用于临时保存和预览文件，可以通过文件名前缀实现对私有文件的管理。")
-    st.write("在Streamlit Cloud使用时，由于重启后不会保留文件，应当尽快取回文件，有条件时优先本地部署。")
+st.write("本项目用于临时保存和预览文件，可以通过文件名前缀实现对私有文件的管理。在Streamlit Cloud使用时，由于重启后不会保留文件，应当尽快取回文件，有条件时优先本地部署。")
+
 # 第一行布局
 col1, col2, col3 = st.columns([2, 2, 4])
 with col1:
