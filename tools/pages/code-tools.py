@@ -1,85 +1,80 @@
 import streamlit as st
 import os
-import sys
 from io import StringIO
+import sys
 
-def load_react_syntax_highlighter():
-    """从 react_syntax_highlighter.txt加载可用语言列表"""
+def get_languages():
+    file_path = os.path.join(os.getcwd(), 'tools', 'languages.txt')
+    with open(file_path, 'r') as f:
+        return [line.strip() for line in f.readlines()]
+
+def run_code(code):
+    old_stdout = sys.stdout
+    sys.stdout = mystdout = StringIO()
     try:
-        file_path = os.path.join("tools", "react_syntax_highlighter.txt")
-        with open(file_path, "r") as f:
-            return [line.strip() for line in f.readlines() if line.strip()]
-    except FileNotFoundError:
-        st.error("找不到 react_syntax_highlighter.txt文件")
-        return []
+        exec(code)
     except Exception as e:
-        st.error(f"读取语言文件时出错: {e}")
-        return []
+        print(f"Error: {e}")
+    finally:
+        sys.stdout = old_stdout
+    return mystdout.getvalue()
 
 st.title("Code Tools")
-st.write("本项目用于编辑和运行Python代码，也可以实现对其它编写语言代码的高亮显示")
-    
-# 初始化session_state
-if "selected_lang" not in st.session_state:
-    st.session_state.selected_lang = "python"
+st.write("本项目用于编辑和运行Python代码，也可以实现对其它编写语言代码的高亮显示。可选是否进行左右分列。")
 
-# 第一行布局
-col1, col2 = st.columns([1, 3])
-with col1:
-    show_lang = st.checkbox("选择其它语言")
+# 第一行顶部布局
+col1_top, col2_top = st.columns(2)
+with col1_top:
+    disable_columns = st.checkbox("停用分列")
+    select_other_lang = st.checkbox("选择其它语言")
 
-# 处理语言选择
-react_syntax_highlighter = []
-if show_lang:
-    react_syntax_highlighter = load_react_syntax_highlighter()
-    with col2:
-        if  react_syntax_highlighter:
-            st.session_state.selected_lang = st.selectbox(
-                "选择语言",
-                options= react_syntax_highlighter,
-                index=0,
-                label_visibility="collapsed"
-            )
-        else:
-            st.write("没有可用的语言选项")
-
-# 代码输入区域
-code_input = st.text_area(
-    "输入代码",
-    height=400,
-    placeholder="在此处输入您的代码...",
-    key="code_input",
-    label_visibility="collapsed"
-)
-
-# 显示高亮代码
-if code_input:
-    display_lang = st.session_state.selected_lang if show_lang else "python"
-    st.subheader("代码预览")
-    st.code(code_input, language=display_lang.lower())
-
-# 执行Python代码（当未选择其他语言时）
-if not show_lang and code_input:
-    st.subheader("执行结果")
-    output_container = st.container()
-    
-    # 重定向标准输出
-    old_stdout = sys.stdout
-    new_stdout = StringIO()
-    sys.stdout = new_stdout
-    
+# 语言选择处理
+selected_lang = 'python'
+if select_other_lang:
     try:
-        # 使用隔离的命名空间执行代码
-        exec_namespace = {}
-        exec(code_input, exec_namespace)
+        languages = get_languages()
+        with col2_top:
+            selected_lang = st.selectbox("选择语言", options=languages)
     except Exception as e:
-        output_container.error(f"执行错误: {str(e)}")
-    finally:
-        sys.stdout = old_stdout  # 恢复标准输出
+        st.error(f"无法读取语言文件: {e}")
+
+# 主内容布局
+if not disable_columns:
+    main_col1, main_col2 = st.columns(2)
+else:
+    main_col1 = st.container()
+
+# 输入框设置
+with main_col1:
+    code_height = 500 if disable_columns else 800
+    code = st.text_area("输入代码", height=code_height, key="code_input")
+
+# 结果显示处理
+if code:
+    lang = selected_lang.lower() if select_other_lang else 'python'
     
-    # 获取执行输出
-    execution_output = new_stdout.getvalue()
-    if execution_output:
-        output_container.code(execution_output)
+    # 代码高亮显示
+    if not disable_columns:
+        with main_col2:
+            st.code(code, language=lang)
+    else:
+        st.code(code, language=lang)
+
+    # 代码执行和输出
+    if not select_other_lang:
+        output_container = main_col2 if not disable_columns else st
+        if not disable_columns:
+            with output_container:
+                output = run_code(code)
+        else:
+            output = run_code(code)
+
+# 下载按钮
+st.download_button(
+    label="下载代码",
+    data=code if code else "",
+    file_name="user_code.txt",
+    mime="text/plain"
+)
 
 st.show()
