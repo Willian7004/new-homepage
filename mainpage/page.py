@@ -8,7 +8,7 @@ st.write("ai-note页面包含我部署AI应用的案例和记录各分类中优�
 st.write("LLM-inquiry页面记录了我使用LLM查询的难以用传统搜索引擎查找的问题，可以分页查看、随机显示或搜索相应文件。")
 st.write("by-talk页面为杂谈，从blog页面的杂谈部分分离出来以便编辑，复用LLM-inquiry页面的逻辑功能。")
 st.write("gallery1页面为使用Hunyuan Video生成的有提示词的图片，可以选择特定提示词对应的文件夹或随机选择文件夹。")
-st.write("gallery2页面包含使用Hunyuan Video生成的有提示词的图片和视频内容，逻辑功能与gallery1页面相同。")
+st.write("gallery2页面包含使用Hunyuan Video生成的有提示词的图片和视频内容，逻辑功能与gallery1页面相同。（后续考虑更换为Cosmos模型生成的内容）")
 st.write("articles-by-llm页面是新创建的，展示了使用在写作上有优势的思维链模型写的文章以及对应的语音。")
 st.write("tools页面包含一些工具，分别如下：")
 st.write("1.files-drop项目，是之前创建的，用于传输文件")
