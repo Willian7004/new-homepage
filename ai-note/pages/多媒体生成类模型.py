@@ -7,9 +7,9 @@ st.write("由于早期的绘画模型都是开源模型并且有工作流的积�
 st.write("开源绘画模型中主流的有Flux.1和Stable Diffusion3.5。考虑光照优势，我个人偏向使用Hunyuan Video进行图片生成，不过只能达到1600x896分辨率，不及Flux.1。")
 
 st.subheader("2.视频模型", divider=True)
-st.write("闭源视频模型中，最新的Veo2和Pica2等模型有比较好的动作生成效果，并且提供了不少一致性功能。开源模型中尚未正式发布的Meta Moviegen应该也会提供较多的一致性控制功能。")
-st.write("一些视频模型有一些有优势的特性。创作长视频需要保证不同片段的一致性，Sora虽然生成效果没有优势，但提供了story board功能，可以实现多个片段的内容一致。Vidu2.0提高了生成速度，降低了成本。Meta开发了VideoJam（未正式发布），在运动场景生成效果最好，并且可以用于改进现有模型。")
-st.write("开源视频模型中效果较好的有Hunyuan Video，Cosmos和Step Video，与最新的商业视频模型有一定差距。在comfyui部署时，Hunyuan Video用8g显存能生成21帧896p视频；Cosmos只支持704p分辨率，8g显存能生成81帧，速度比前者快不少，主要问题是对提示词依赖程度高，建议使用图生视频并通过多模态模型改进提示词。Step Video参数量为30b，运动场景表现较好且你一次生成204帧，但分辨率只有544p。")
+st.write("视频模型分为高成本和低成本路线。高成本路线闭源模型包括Pika2,Veo2和可灵等，开源模型包括Hunyuan Video,Step Video和Wan2.1，有出片率和文生视频稳定的优势，生成效果也更好。低成本路线闭源模型包括Vidu2.0和PixVerse v4，开源模型包括Cosmos。")
+st.write("一些视频模型有一些有优势的特性。不少闭源模型提供了一致性控制功能，开源模型少一些但在Hunyuan Video Wrapper插件提供了一些。创作长视频需要保证不同片段的一致性，Sora虽然生成效果没有优势，但提供了story board功能，可以实现多个片段的内容一致。Meta开发了VideoJam（未正式发布），在运动场景生成效果最好，并且可以用于改进现有模型。")
+st.write("在本地部署方面，Cosmos Diffusion 7b硬件门槛较低并且运镜效果好，但非铺装路面的物体以及大范围运镜的生成效果不好，另外依赖图生视频和提示词优化。运动效果有优势的Wan2.1和Step Video目前还没有支持Comfyui，参考官方数据和其它模型的情况，Wan2.1有望在中等显存下运行且适合40系中高端卡，Step Video Tubro效果没问题的话有望获得成本优势，适合即将发布的b580 24g以及魔改卡等价格相对较低的大显存显卡。")
 
 st.subheader("3.TTS模型", divider=True)
 st.write("TTS模型用于语音合成。目前没有比较好的可以图形化运行TTS模型的运行框架，以前我主要使用一些模型的第三方整合包，后来看到Fish Speech可以通过官方代码以整合包形式快速部署，支持fastapi，官方还做了Windows版本的GUI应用，生成时能按句子进行分割，就在TTS模型上改用Fish Speech。虽然不完全真实但效果优于大部分同类模型。显存占用约2g，部署门槛比较低。另外，Zonos v0.1等模型搭配了LLM，可以更好地处理语气；Kokoro 82m参数量小，推理更快。不过考虑到方面部署和使用，还是继续用Fish Speech。")

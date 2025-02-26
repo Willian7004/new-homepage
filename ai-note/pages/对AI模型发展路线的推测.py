@@ -18,7 +18,7 @@ st.write("多模态模型，使用更多实拍数据训练也有助于提高空�
 
 st.subheader("4.绘画模型/视频模型的参数量和成本", divider=True)
 st.write("第一个能接近相应分辨率的细节上限的绘画模型FLux.1 dev是12b参数量，而后来的Stable Diffusion3.5 large是8.3b参数量，较高精度下画质没问题但分辨率低，绘画模型性价比最高的参数量大致在这一区间。")
-st.write("对于视频模型，Cosmos,Hunyuan Video和Step Video中，Cosmos 7b动态物体画质最差，Step Video动态物体画质最好，因此视频模型为了提高动态物体画质可能还是需要约30b参数量。")
-st.write("在主流配置下，Flux.1 dev用于批量生成时较慢，轻度使用速度没问题。Cosmos 1.0 Diffusion 7b图生视频在主流配置速度还可以，更大的模型生成长度和速度都不理想。商业模型中成本较低的Vidu2.0每个视频约0.3元，推测Cosmos 1.0 Diffusion 14b也接近这一成本，一般用户应该可以接受。视频模型中成本问题明显的主要是一些参数量较大或架构优化不足的商业模型。")
+st.write("对于视频模型，Cosmos 7b动态物体画质最差，Step Video和Wan2.1动态物体画质较好，因此对动态物体画质要求高的话还是需要14b左右的模型。")
+st.write("在主流配置下，Flux.1 dev用于批量生成时较慢，轻度使用速度没问题。Cosmos 1.0 Diffusion 7b图生视频在主流配置速度还可以，更大的模型生成长度和速度都不理想。Hunyuan Video在Siliconflow的定价是每个视频0.7元，小规模使用的话成本可以接受，推测Step Video和Wan2.1成本也接近。较新的商业模型也考虑了成本问题，推测有不少跟Wan2.1接近，而成本较低的Vidu2.0定价按订阅价格换算约为每个视频0.3元，成本与Cosmos Diffusion14b接近。")
 
 st.show()
