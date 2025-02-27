@@ -18,7 +18,8 @@ st.subheader("4.小型化旗舰模型", divider=True)
 st.write("有几个系列的模型在有模型达到GPT4水平后开始小型化并保持性能，其中闭源模型主要有Gemini2.0 Flash和Yi Lighting，开源模型主要有phi4，14b参数量适合在PC部署,推理模型包括Gemini2.0 Flash Thinking和Deepseek R1 Distill系列。")
 
 st.subheader("5.端侧模型", divider=True)
-st.write("端侧模型用于手机或在PC后台运行，主要考虑7b和3b参数量，并且只能使用开源模型。考虑多语言后有优势的多模态模型有Qwen2 VL 7B和Megrez 3B Omni，单模态模型中非推理模型有Qwen2.5 3B/7b，推理模型有DeepscaleR和Deepseek R1 Distill Qwen 1.5b/7b。")
+st.write("端侧模型用于手机或在PC后台运行，主要考虑7b和3b参数量，并且只能使用开源模型。考虑多语言后有优势的多模态模型有Qwen2 VL 7B和Megrez 3B Omni，单模态模型中非推理模型有Qwen2.5 7b和Phi4 mini，推理模型有DeepscaleR和Deepseek R1 Distill Qwen 1.5b/7b。")
+st.image("ai-note/files/小参数量模型.jpg")
 
 st.subheader("6.无审查模型", divider=True)
 st.write("比较新的模型大部分进行了对齐，可以避免生成不道德的内容，但在角色扮演等用途仍需要未对齐的模型。")

@@ -10,6 +10,13 @@ st.write("Images by Hunyuan Video项目，展示使用Hunyuan Video生成的图�
 st.subheader("2.视频模型", divider=True)
 st.write("（由于视频生成改用cosmos，gallery页面将改用cosmos生成的视频，hunyuan video生成的部分改为指向初始项目，并在初始项目合并新增内容，下同）Hunyuan Video Gallery Without Prompt项目，展示使用Hunyuan Video在不填写提示词时得到的图片和视频： https://william7004-hunyuan-video-gallery-without-prompt.streamlit.app/")
 st.write("Hunyuan Video Gallery 项目，展示使用Hunyuan Video在有提示词时生成的视频： https://william7004-hunyuan-video-gallery.streamlit.app/")
+st.write("以下两个视频是在官网使用Step Video T2V生成的")
+video_file1 = open("ai-note/files/step-video-1.mp4", "rb")
+video_bytes1 = video_file1.read()
+st.video(video_bytes1)
+video_file2 = open("ai-note/files/step-video-2.mp4", "rb")
+video_bytes2 = video_file2.read()
+st.video(video_bytes2)
 
 st.subheader("3.TTS模型", divider=True)
 st.write("articles-by-llm页面包含使用Fish Speech1.5合成的音频。")
