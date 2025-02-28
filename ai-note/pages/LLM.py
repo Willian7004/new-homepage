@@ -2,8 +2,7 @@ import streamlit as st
 
 st.title("LLM")
 st.subheader("1.旗舰模型", divider=True)
-st.write("旗舰模型参数量较大，运行成本较高但可完成的任务也较多。Deepseek v3算是第一个下一代模型，也是第一个发布时性能超越所有闭源模型的开源模型，通过混合专家架构避免成本过高，但后面发布的Gemini2.0Flash控制了参数量，在成本上有一定优势，Grok3是目前效果最好的模型。由于测试集原因，数据合并到推理模型部分。以下是几个模型的对比（由于改用new homepage项目后无法显示表格，把数据导出到了xlsx文件，改用图片形式）")
-st.image("ai-note/files/旗舰模型.jpg")
+st.write("旗舰模型参数量较大，运行成本较高但可完成的任务也较多。Deepseek v3算是第一个下一代模型，也是第一个发布时性能超越所有闭源模型的开源模型，通过混合专家架构避免成本过高，但后面发布的Gemini2.0Flash控制了参数量，在成本上有一定优势，GPT4.5是目前总体效果最好的模型，而Grok3是开放免费使用的模型中效果最好的模型，Claude3.7 Sonnet在编程上有优势。为了方便对比和减少落后测试集，数据合并到推理模型部分。")
 
 st.subheader("2.多模态模型", divider=True)
 st.write("多模态模型开源处理图片。对于非思维链模型，闭源模型中Claude3.5 Sonnet表现最好，开源模型中MiniMax VL01表现最好。对于思维链模型，闭源模型中o1表现最好，开源模型中QvQ 72B Preview表现最好。以下是几个模型的对比")
@@ -12,23 +11,20 @@ st.write("早期的多模态模型大多只支持文本和图像，GPT 4o首次�
 
 st.subheader("3.推理模型", divider=True)
 st.write("推理模型可以通过增加推理步骤来提高性能。目前最优秀的闭源推理模型是Grok3 Reasoning系列，基本能对标未发布的o3。最优秀的开源推理模型是Deepseek R1，其蒸馏版本在本地部署上有优势。以下是几个模型的对比（由于不少模型不是同时测试，表中只保留了有较多模型进行的测试。beat of 64测试的结果写到括号内）")
-st.image("ai-note/files/推理模型.jpg")
+st.image("ai-note/files/旗舰模型和推理模型.jpg")
 
-st.subheader("4.小型化旗舰模型", divider=True)
-st.write("有几个系列的模型在有模型达到GPT4水平后开始小型化并保持性能，其中闭源模型主要有Gemini2.0 Flash和Yi Lighting，开源模型主要有phi4，14b参数量适合在PC部署,推理模型包括Gemini2.0 Flash Thinking和Deepseek R1 Distill系列。")
-
-st.subheader("5.端侧模型", divider=True)
+st.subheader("4.端侧模型", divider=True)
 st.write("端侧模型用于手机或在PC后台运行，主要考虑7b和3b参数量，并且只能使用开源模型。考虑多语言后有优势的多模态模型有Qwen2 VL 7B和Megrez 3B Omni，单模态模型中非推理模型有Qwen2.5 7b和Phi4 mini，推理模型有DeepscaleR和Deepseek R1 Distill Qwen 1.5b/7b。")
 st.image("ai-note/files/小参数量模型.jpg")
 
-st.subheader("6.无审查模型", divider=True)
+st.subheader("5.无审查模型", divider=True)
 st.write("比较新的模型大部分进行了对齐，可以避免生成不道德的内容，但在角色扮演等用途仍需要未对齐的模型。")
 st.write("目前效果最好的官方无审查模型是旧版CommandR和CommandR+，但考虑到模型较旧，实际部署时可能要优先使用比较新的模型的去对齐版本。")
 
-st.subheader("7.长序列模型", divider=True)
+st.subheader("6.长序列模型", divider=True)
 st.write("处理或生成较长的文章需要支持较大输入或输出上下文长度的模型，考虑对api成本的影响，这类只讨论开源模型。目前比较好的开源长上下文模型有Qwen2.5 7b/14b、InternLM2.5 7b和GLM4 9b的长上下文版本。长输出模型只有使用longwriter数据集微调的模型，目前只有GLM4 9b、Qwen2.5 7B和Llama3.1 8b。")
 
-st.subheader("8.模型部署", divider=True)
+st.subheader("7.模型部署", divider=True)
 st.write("有多个运行框架可以部署LLM，我目前用的是Ollama。Ollama的优势是安装比较方便，还可以直接在命令行下载量化后的模型。对于其它框架，vLLM的优势是并发性能好以及支持多GPU张量并行；kTransformers的优势是通过异构计算优化MoE模型的显存占用；Mlx Vlm适用于Mac平台，对多模态模型支持较好；ChatterUI适用于安卓平台。Xinference整合了一些推理框架，除LLM外还支持语音合成等类型的模型。")
 st.write("Ollama没有GUI但可以通过http请求或使用Python和Javascript等语言的库文件整或到应用中。Chatbox可以直接调用Ollama的非多模态模型并通过openai api格式调用多模态模型。")
 st.write("我目前在电脑部署的模型有Deepseek R1 Distill Qwen 7b Ablicated（去对齐）、MiniCPM v2.6（用于多模态，效果更好的Qwen2 VL 7b目前还不能在Ollama运行）、Bge-m3（嵌入模型）。在手机部署的模型有Deepseek R1 Distill Qwen 1.5b和Dolphin3 3b。")
