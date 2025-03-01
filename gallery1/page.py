@@ -3,7 +3,7 @@ import random
 import streamlit as st
 
 with st.expander("Images by Hunyuan Video （展开项目说明）"):
-    st.write("本项目内容为本人使用Hunyuan Video生成的有提示词的图片内容，并覆盖了因为无提示词导致效果一般的Hunyuan Video Gallery Without Prompt项目。由于改用了q6_k精度的模型，细节比之前的Hunyuan Video Gallery项目中的好一些，此外复用了这一项目的代码。提示词方面，复用了之前使用Flux.1的提示词，移除了生成效果一般的内容。")
+    st.write("本项目内容为本人使用Hunyuan Video生成的有提示词的图片内容，并覆盖了因为无提示词导致效果一般的Hunyuan Video Gallery Without Prompt项目。由于改用了q6_k精度的模型，细节比之前的Hunyuan Video Gallery项目中的好一些，此外复用了这一项目的代码。提示词方面，复用了之前使用Flux.1的提示词，移除了生成效果一般的内容，也添加了一些新的提示词")
 # 获取当前目录下files文件夹中的所有文件夹
 def get_folders():
     base_dir = "gallery1/files"

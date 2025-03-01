@@ -1,9 +1,10 @@
 import os
 import random
 import streamlit as st
+import re
 
-with st.expander("Hunyuan Video Gallery （展开项目说明）"):
-    st.write("本项目内容为本人使用Hunyuan Video生成的有提示词的视频内容，比之前的无提示词流程出片率高。可以选择随机显示或显示特定文件夹的内容。虽然使用ConfyUI官方工作流时能生成图片，但考虑到是视频模型，本项目只包含视频内容。")
+with st.expander("Wan2.1 Video Gallery （展开项目说明）"):
+    st.write("本项目内容为本人使用Wan2.1 1.3b生成的视频，复用了之前在社交媒体发布的使用其它模型生成的视频的提示词，文件夹以主题命名，5个视频为1组并在每个视频下面显示提示词。新添加的内容在每个主题只出5个视频。")
 # 获取当前目录下files文件夹中的所有文件夹
 def get_folders():
     base_dir = "gallery2/files"
@@ -42,6 +43,12 @@ if random_folder:
             for video in videos:
                 video_path = os.path.join("gallery2/files", selected_folder, video)
                 st.video(video_path,loop=True, autoplay=True)
+                # 使用正则表达式匹配并打印提示词
+                pattern = r'）\\(.*?)\_'
+                match = re.search(pattern,video_path)
+                if match:
+                    st.write(match.group(1))
+  
         else:
             st.write("该文件夹中没有视频文件。")
     else:
@@ -59,8 +66,15 @@ else:
             for video in videos:
                 video_path = os.path.join("gallery2/files", selected_folder, video)
                 st.video(video_path,loop=True, autoplay=True)
+                #使用正则表达式匹配并打印提示词
+                pattern = r'）\\(.*?)\_'
+                match = re.search(pattern,video_path)
+                if match:
+                    st.write(match.group(1))
+    
         else:
             st.write("该文件夹中没有视频文件。")
     else:
         st.write("files文件夹中没有子文件夹。")
+        
 st.show()      
