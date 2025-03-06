@@ -36,7 +36,7 @@ st.image("blog/files/CT2.jpg")
 st.image("blog/files/CT3.jpg")
 st.image("blog/files/CT4.jpg")
 st.subheader("7.iStoreOS与存算分离", divider=True)
-st.write("虽然j1800能用外观较好的Solus Linux，但兼容性较差，又考虑到Linux系统使用各类局域网共享的权限设置比较麻烦，就装了iStoreOS且部署了分离出存储功能，主要部署了smb和Jellyfin，客户端直接在浏览器使用以避免转码。如果以后弃用Windows，这一形式仍然能保持比较好的体验。")
+st.write("虽然j1800能用外观较好的Solus Linux，但兼容性较差，又考虑到Linux系统使用各类局域网共享的权限设置比较麻烦，就装了iStoreOS且部署了分离出存储功能，主要部署了smb和Jellyfin，客户端直接在浏览器使用以避免转码。如果以后弃用Windows，这一形式仍然能保持比较好的体验。不过由于编译环境等方面的支持有问题，部署开发环境会比较困难，用1panel部署的docker有联网问题")
 st.write("另外入手了一台j4125迷你主机作为备用机。视频输出高于1080p时容易掉帧，但限制在1080p时体验好不少。可以流畅运行Cinnamon桌面，解码1080p 60帧/2.5k 30帧视频，进行1080p 30帧录屏，全高画质运行Openarena，以第5级画质运行Supertuxkart，Stellarium达到14帧，Xaos超过24帧。")
 
 st.show()
