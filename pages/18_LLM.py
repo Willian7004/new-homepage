@@ -1,4 +1,5 @@
 import streamlit as st
+import pandas as pd
 st.set_page_config(layout="wide")
 st.title("LLM")
 st.subheader("1.旗舰模型", divider=True)
@@ -6,16 +7,19 @@ st.write("旗舰模型参数量较大，运行成本较高但可完成的任务�
 
 st.subheader("2.多模态模型", divider=True)
 st.write("多模态模型开源处理图片。对于非思维链模型，闭源模型中Claude3.5 Sonnet表现最好，开源模型中MiniMax VL01表现最好。对于思维链模型，闭源模型中o1表现最好，开源模型中QvQ 72B Preview表现最好。以下是几个模型的对比")
-st.image("files/多模态模型.jpg")
+df1 = pd.read_excel("files/多模态模型.xlsx")
+st.dataframe(df1)
 st.write("早期的多模态模型大多只支持文本和图像，GPT 4o首次支持语音。在开源模型方面，MiniCPM v2.6 o通过整合不同模型实现对文本、视频和语音的支持，原生支持文本和语音的有Step Audio，原生支持文本、视频和语音的模型中最好的开源模型是Ola 7b。")
 
 st.subheader("3.推理模型", divider=True)
 st.write("推理模型可以通过增加推理步骤来提高性能。目前最优秀的闭源推理模型是Grok3 Reasoning系列，基本能对标未发布的o3，最优秀的开源推理模型是Deepseek R1。本地部署Qwq 32b比较有优势，也解决了Deepseek R1小说写作过度使用科幻元素以及蒸馏版写作风格不一致的问题，小参数量的参考下表。由于不少模型不是同时测试，表中只保留了有较多模型进行的测试。beat of 64测试的结果写到括号内。")
-st.image("files/旗舰模型和推理模型.jpg")
+df2 = pd.read_excel("files/旗舰模型和推理模型.xlsx")
+st.dataframe(df2)
 
 st.subheader("4.端侧模型", divider=True)
 st.write("端侧模型用于手机或在PC后台运行，主要考虑7b和3b参数量，并且只能使用开源模型。考虑多语言后有优势的多模态模型有Qwen2 VL 7B和Megrez 3B Omni，单模态模型中非推理模型有Qwen2.5 7b和Phi4 mini，推理模型有DeepscaleR和Deepseek R1 Distill Qwen 1.5b/7b。")
-st.image("files/小参数量模型.jpg")
+df3 = pd.read_excel("files/小参数量模型.xlsx")
+st.dataframe(df3)
 
 st.subheader("5.无审查模型", divider=True)
 st.write("比较新的模型大部分进行了对齐，可以避免生成不道德的内容，但在角色扮演等用途仍需要未对齐的模型。")
