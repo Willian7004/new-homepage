@@ -1,61 +1,23 @@
 import streamlit as st
-import importlib
-import os
-import sys
-
 st.set_page_config(layout="wide")
-# 将当前目录添加到Python路径中，确保模块导入正常
-sys.path.append(".")
+st.title("New Homepage")
+st.subheader("1.项目内容", divider=True)
+st.write("本项目整合了我之前几个仍在维护的非工具类Streamlit项目的内容，在侧边栏选择对应页面。原项目保留在Streamlit Cloud但新增内容只会放到本项目。")
+st.write("原blog项目包含我的一些技术方面的文章和杂谈，原ai-note项目包含我部署AI应用的案例和记录各分类中优秀的AI模型。最近取消多级页面后，这两个项目的页面放到末尾。")
+st.write("")
+st.write("LLM查询页面记录了我使用LLM查询的难以用传统搜索引擎查找的问题，可以分页查看、随机显示或搜索相应文件。")
+st.write("杂谈页面，从blog页面的杂谈部分分离出来以便编辑，复用LLM-inquiry页面的逻辑功能。")
+st.write("AI图片页面为使用Hunyuan Video生成的的图片，可以选择特定提示词对应的文件夹或随机选择文件夹。")
+st.write("AI视频页面包含使用Wan2.1 1.3b生成的视频，可以根据视频主题选择对应的文件夹或随机选择文件夹。")
+st.write("LLM散文集页面是新创建的，展示了使用在写作上有优势的思维链模型写的文章以及对应的语音。")
+st.write("工具类项目如下：")
+st.write("1.文件传输项目，是之前创建的，用于传输文件")
+st.write("2.代码编辑器项目用于编写和运行python程序或用于高亮显示其它编程语言的代码。")
+st.write("2.Markdown工具项目用于预览markdown以及运行markdown中的python程序，相比code-tools项目更接近notebook类型。")
+st.subheader("2.开发过程和原因", divider=True)
+st.write("本人使用Streamlit创建项目的原因是语法较为简洁，并且能对接我较为熟悉的Python生态，语法简洁在LLM辅助开发上也有优势。相比原项目，博客类去掉了边栏显示的目录，其它几个保留原项目内容，包括项目说明，另外也开发了一些新的项目，在对应的.md文件有提示词。页面布局由于不可重复设置，统一设为wide。按使用LLM得到的程序缺少show()函数导致第二次打开同一页面时无法显示，添加st.show()后有报错但可以正常运行。")
+st.write("考虑兼容性和外观，最近的更新取消了多级页面的设置，改为原生多页面并移除st.show()函数。")
+st.write("本人创建个人网站的一方面原因是作为编程实践，另一方面使用个人网站相比社交平台在设计和内容上较为自由，也可以发挥Python生态优势实现更多功能。")
+st.subheader("3.我的其它项目", divider=True)
+st.write("我的GitHub名称是willian7004，命名时笔误了，在streamlit cloud的域名均使用william7004的名称。其它项目可以在我的GitHub仓库查看，博客部分也提到了其中一些项目和技术路线。")
 
-# 主页面配置
-main_folders = ['mainpage', 'blog', 'ai-note', 'llm-inquiry', 'by-talk','gallery1', 'gallery2','articles-by-llm','tools']
-
-# 创建侧边栏单选按钮
-selected_main = st.sidebar.radio(
-    "请选择主页面",
-    main_folders,
-    index=main_folders.index('mainpage')  # 设置默认选项
-)
-
-def load_module(module_path):
-    """动态加载模块并显示内容"""
-    try:
-        module = importlib.import_module(module_path)
-        module.show()
-    except ModuleNotFoundError:
-        st.error(f"找不到模块: {module_path}")
-    except AttributeError:
-        st.error(f"模块中缺少show()函数: {module_path}")
-
-if selected_main in ['blog', 'ai-note','tools']:
-    # 处理带子页面的情况
-    pages_dir = os.path.join(selected_main, 'pages')
-    
-    if not os.path.exists(pages_dir):
-        st.error(f"目录不存在: {pages_dir}")
-        st.stop()
-        
-    # 获取所有合法的子页面文件
-    sub_pages = [
-        f[:-3] for f in os.listdir(pages_dir)
-        if f.endswith('.py') and f not in ['__init__.py', 'page.py']
-    ]
-    
-    if not sub_pages:
-        st.error(f"没有找到子页面: {pages_dir}")
-        st.stop()
-    
-    # 创建子页面单选按钮
-    selected_sub = st.sidebar.radio(
-        "请选择子页面",
-        sub_pages
-    )
-    
-    # 构建模块路径并加载
-    module_path = f"{selected_main}.pages.{selected_sub}"
-    load_module(module_path)
-
-else:
-    # 处理普通页面
-    module_path = f"{selected_main}.page"
-    load_module(module_path)
