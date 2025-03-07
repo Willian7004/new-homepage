@@ -37,6 +37,7 @@ st.image("files/CT3.jpg")
 st.image("files/CT4.jpg")
 st.subheader("7.iStoreOS与存算分离", divider=True)
 st.write("虽然j1800能用外观较好的Solus Linux，但兼容性较差，又考虑到Linux系统使用各类局域网共享的权限设置比较麻烦，就装了iStoreOS且部署了分离出存储功能，主要部署了smb和Jellyfin，客户端直接在浏览器使用以避免转码。如果以后弃用Windows，这一形式仍然能保持比较好的体验。")
-st.write("iStoreOS也有对http以及常见web开发框架的支持，其它web依赖项大多可以通过cdn导入。部署python程序比较麻烦，直接安装时无法安装需要编译的python包，安装conda也会遇到bash支持的问题。不过iStore上有一个带远程桌面的Ubuntu，可以安装conda，但由于过度精简，不兼容clash verge或clash for linux install，只能手动复制文件或者用其它设备克隆git仓库。虽然配置端口比较麻烦但开浏览器全屏也勉强算是成功部署页面了。")
+st.write("iStoreOS也有对http以及常见web开发框架的支持，其它web依赖项大多可以通过cdn导入。部署python程序比较麻烦，直接安装时无法安装需要编译的python包，安装conda也会遇到bash支持的问题。不过iStore上有一个带远程桌面的Ubuntu，可以安装conda，但由于过度精简，不兼容clash verge或clash for linux install，功能不太完善。最终改用Docker部署Streamlit应用。")
+st.write("根据说明，iStoreOS的Ubuntu镜像来源于kasmtech的仓库，kasmtech/workspaces-images和kasmtech/workspaces-core-images仓库分别提供了有桌面环境和无桌面环境的可通过http串流的Linux镜像。不过对比仓库的说明，iStoreOS的Ubuntu镜像的确进行了精简。")
 st.write("另外入手了一台j4125迷你主机作为备用机。视频输出高于1080p时容易掉帧，但限制在1080p时体验好不少。可以流畅运行Cinnamon桌面，解码1080p 60帧/2.5k 30帧视频，进行1080p 30帧录屏，全高画质运行Openarena，以第5级画质运行Supertuxkart，Stellarium达到14帧，Xaos超过24帧。")
 
