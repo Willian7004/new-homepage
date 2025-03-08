@@ -40,4 +40,4 @@ st.write("虽然j1800能用外观较好的Solus Linux，但兼容性较差，又
 st.write("iStoreOS也有对http以及常见web开发框架的支持，其它web依赖项大多可以通过cdn导入。部署python程序比较麻烦，直接安装时无法安装需要编译的python包，安装conda也会遇到bash支持的问题。不过iStore上有一个带远程桌面的Ubuntu，可以安装conda，但由于过度精简，不兼容clash verge或clash for linux install等程序，不过提前在iStoreOS启动openclash也能使用代理。vscode能用但延时长，而iStore上的使用web的codeserver无法显示界面。最终改用Docker部署Streamlit应用。")
 st.write("根据说明，iStoreOS的Ubuntu镜像来源于kasmtech的仓库，kasmtech/workspaces-images和kasmtech/workspaces-core-images仓库分别提供了有桌面环境和无桌面环境的可通过http串流的Linux镜像。不过对比仓库的说明，iStoreOS的Ubuntu镜像的确进行了精简。")
 st.write("另外入手了一台j4125迷你主机作为备用机。视频输出高于1080p时容易掉帧，但限制在1080p时体验好不少。可以流畅运行Cinnamon桌面，解码1080p 60帧/2.5k 30帧视频，进行1080p 30帧录屏，全高画质运行Openarena，以第5级画质运行Supertuxkart，Stellarium达到14帧，Xaos超过24帧。")
-
+st.write("考虑到Jellyfin生成缩略图流畅度问题以及方便在不同设备使用一个Linux桌面，后面改为在j4125部署iStoreOS，j1800安装xfce桌面的solus linux并连接iStoreOS上的Ubuntu镜像。需要注意的是默认视频模式降分辨率，为保证效果可以改为不降分辨率并更改压缩比，播放视频尽量在物理机进行。输入法方面需要开启使用系统输入法选项而非使用虚拟机的输入法。这样部署的缺点是只能用外观较差的xfce桌面。")
