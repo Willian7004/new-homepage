@@ -14,6 +14,7 @@ def get_files():
 
 # 显示文件内容
 def display_file(file_path):
+    st.divider()
     # 显示文件名
     file_name = file_path.stem
     st.subheader(file_name)
