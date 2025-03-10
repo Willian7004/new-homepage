@@ -27,7 +27,7 @@ def display_files(file_list):
                 st.error(f"读取文件失败: {str(e)}")
 
 with st.expander("LLM查询 （展开项目说明）"):
-    st.write("本项目用于展示我使用LLM查询一些难检索的问题的记录。一些问题由于位于一个关键词所包含的内容的细节、涉及多个搜索关键词的内容或需要查找的历史内容被新闻覆盖，使用LLM回答相比搜索引擎有优势。本项目主要展示我使用LLM解答的这类问题，总体偏向杂谈形式。内容筛选方面，排除了一些可能出现事实错误的回答。使用过的LLM包括deepseek v2.5、deepseek v3、deepseek r1 lite preview和deepseek r1。重构后增加了随机选择文件和搜索功能。")
+    st.write("本项目用于展示我使用LLM查询一些难检索的问题的记录。一些问题由于位于一个关键词所包含的内容的细节、涉及多个搜索关键词的内容或需要查找的历史内容被新闻覆盖，使用LLM回答相比搜索引擎有优势。本项目主要展示我使用LLM解答的这类问题，总体偏向杂谈形式。内容筛选方面，排除了一些可能出现事实错误的回答。使用过的LLM包括deepseek v2.5、deepseek v3、deepseek r1 lite preview和deepseek r1,近期改用了QwQ 32b。重构后增加了随机选择文件和搜索功能。")
 
 # 第一行布局
 col1, col2 = st.columns(2)
