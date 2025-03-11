@@ -5,7 +5,7 @@ from glob import glob
 
 st.set_page_config(layout="wide")
 with st.expander("YuE音乐集 （展开项目说明）"):
-    st.write("本项目内容为本人使用YuE生成的音乐。通过sgsdxzy/YuE-exllamav2项目进行部署，stage1模型使用4.25bpw版本，stage2模型使用8.0bpw版本，显存门槛约为6g。提示词使用Qwq 32b创建，其中风格提示词使用官方的说明、参考词汇和示例作为提示词进行创建，歌词根据风格提示词、官方说明和示例创建并根据长度进行筛选。生成按默认参数，调低了batch size和cache以减少显存占用。标题使用风格提示词。歌词不使用连续两次换行，在这里为了能正常显示换行进行了转换。生成效果方面，YuE生成慢一些但效果比Stable Audio Open等模型好很多，虽然稳定性和音质一般但总体上达到可用水平。")
+    st.write("本项目内容为本人使用YuE生成的音乐。通过sgsdxzy/YuE-exllamav2项目进行部署，stage1模型使用4.25bpw版本，stage2模型使用8.0bpw版本，显存门槛约为6g。提示词使用Qwq 32b创建，其中风格提示词使用官方的说明、参考词汇和示例作为提示词进行创建，歌词根据风格提示词、官方说明和示例创建并根据长度进行筛选,本页使用风格提示词作为标题。生成按默认参数，调低了batch size和cache以减少显存占用。标题使用风格提示词。歌词不使用连续两次换行，在这里为了能正常显示换行进行了转换。生成效果方面，YuE生成慢一些但效果比Stable Audio Open等模型好很多，虽然稳定性和音质一般但总体上达到可用水平。")
 # 获取音乐文件夹路径
 music_dir = "files/music"
 
