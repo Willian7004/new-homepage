@@ -14,7 +14,7 @@ st.subheader("3.TTS模型", divider=True)
 st.write("TTS模型用于语音合成。目前没有比较好的可以图形化运行TTS模型的运行框架，以前我主要使用一些模型的第三方整合包，后来看到Fish Speech可以通过官方代码以整合包形式快速部署，支持fastapi，官方还做了Windows版本的GUI应用，生成时能按句子进行分割，就在TTS模型上改用Fish Speech。虽然不完全真实但效果优于大部分同类模型。显存占用约2g，部署门槛比较低。另外，Zonos v0.1等模型搭配了LLM，可以更好地处理语气；Kokoro 82m参数量小，推理更快。不过考虑到方面部署和使用，还是继续用Fish Speech。")
 
 st.subheader("4.音乐模型", divider=True)
-st.write("开源音乐模型效果最好的是Yue s1，与Suno等商业模型效果相当。")
+st.write("开源音乐模型效果最好的是YuE，与Suno等商业模型效果相当。DiffRhythm速度更快，但上下文衔接差一些。算力不太低的话用YuE比较合适。")
 
 st.subheader("4.模型部署", divider=True)
 st.write("绘画模型、视频模型和一些其它类型的模型一般使用ComfyUI部署。主要优势是有显存优化并且可以提供插件适配更多模型。为了方便管理插件和运行环境，可以使用绘世等第三方整合包。音乐模型方面，Comfyui只能用效果比较差的Stable Audio Open，Yue s1需要用官方代码部署，显存要求10g以上并且随音轨数增加，相对难以普及。")
